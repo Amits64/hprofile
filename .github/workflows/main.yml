@@ -1,14 +1,17 @@
 name: hprofile-actions
-on: workflow_dispatch
+
+on: 
+  workflow_dispatch: # Allows manual triggering of the workflow
+
 jobs:
   Testing:
-    runs-on: self-hosted
+    runs-on: [self-hosted, ubuntu] # Use labels for self-hosted runners
     steps:
-      - name: Code-checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Maven Test
-        uses: mvn test
+      - name: Run Maven Tests
+        run: mvn test
 
-      - name: Checkstyle
-        uses: mvn checkstyle:checkstyle
+      - name: Run Checkstyle
+        run: mvn checkstyle:checkstyle
