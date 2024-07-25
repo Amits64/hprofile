@@ -1,3 +1,5 @@
+[![.github/workflows/main.yml](https://github.com/Amits64/hprofile/actions/workflows/main.yml/badge.svg)](https://github.com/Amits64/hprofile/actions/workflows/main.yml)
+
 # Prerequisites
 ########
 - JDK 11
