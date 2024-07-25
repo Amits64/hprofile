@@ -2,7 +2,7 @@ name: hprofile-actions
 on: workflow_dispatch
 jobs:
   Testing:
-    runs-on: ubuntu:latest
+    runs-on: self-hosted
     steps:
       - name: Code-checkout
         uses: actions/checkout@v4
