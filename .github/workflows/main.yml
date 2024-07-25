@@ -22,16 +22,9 @@ jobs:
       - name: Run Checkstyle
         run: mvn checkstyle:checkstyle
 
-      - name: Download SonarQube Scanner
-        run: |
-          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
-          unzip sonar-scanner-cli-4.6.2.2472-linux.zip
-
-      - name: Set up SonarQube Scanner
-        run: echo "SONAR_SCANNER_HOME=$(pwd)/sonar-scanner-4.6.2.2472-linux" >> $GITHUB_ENV
-
-      - name: Add SonarQube Scanner to PATH
-        run: echo "${SONAR_SCANNER_HOME}/bin" >> $GITHUB_PATH
+      # Setup sonar-scanner
+      - name: Setup SonarQube
+        uses: warchant/setup-sonar-scanner@v7
 
       - name: SonarQube Scan
         run: |
